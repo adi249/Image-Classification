@@ -8,41 +8,41 @@ Let's implement the algorithm using the Keras deep learning framework, which I'v
 
 This neural network is implemented in Keras (this comes pre-installed on Paperspace, but if you're running this locally you can always install Keras from your command line with pip install Keras). Next, we import the model and layers which we will use for building the neural network architecture, which in this case is a CNN.
 
-![](images/2.png) 
+![](images/2.PNG) 
 
 ## Step 2: Defining Hyperparameters
 
 Choosing the hyperparameters for your network can be a challenging task. Without going into too much theory or testing many different values, here we use standard values for the batch size (which defines the number of training samples to work through before updating the model weights) and number of epochs (full presentations of the data in the training set for learning). There are 10 classes since we're considering the digits 1-10.
 
-![](images/3.png)
+![](images/3.PNG)
 
 ## Step 3: Loading the Images
 The next step is to load our data set and set constant image sizes for our training process. The images sizes are fixed to (28 x 28), as the network input parameters are always constant.
 
-![](images/4.png)
+![](images/4.PNG)
 
 
 ## Step 4: Data Pre-Processing
 
 In this step we need to make sure that the training data is pre-processed and tuned to the same direction; if your inputs are of different sizes, the performance of your network will be inaccurate. We use a simple reshape method on every image and iterate it over the complete data set. Next, we assign the respected label to every image for the training process, in this case, we use the to_categorical method to assign a label to every image.
 
-![](images/5.png)
+![](images/5.PNG)
 
 ## Step 5: Defining the Architecture
 
 With the Keras framework we can easily declare a model by sequentially adding the layers. We use the add() method for this.
 
-![](images/6.png)
+![](images/6.PNG)
 
 ## Step 6: The Training Loop
 
 Next we fit the model with the declared hyperparameters and initiate the training process. This can be simply done by using the model.fit() method and passing the parameters.
-![](images/7.png)
+![](images/7.PNG)
 
 ## Step 7: Evaluating the Model
-![](images/14.png)
+![](images/14.PNG)
 ## Step 8: Saving the Model
-![](images/8.png)
+![](images/8.PNG)
 ### Upon running this program and successful training, you will find two files in the same directory:
 
 #### 1) model.json
@@ -55,7 +55,7 @@ The HDF5 library lets users store huge amounts of numerical data. The save_weigh
 
 Now that we have saved our model in HDF5 format we can load the weights whenever we want, and apply it to future tasks. To load the weights we'll also need to have the corresponding model architecture defined. 
 This is done from a JSON file we previously used. Once the model is prepared with the trained weights, we're ready to use it for inference.
-![](images/9.png)
+![](images/9.PNG)
 
 Now that we have the model saved along with the weights learned from training, we can use them to do inference on new data. This is how we make our trained models reusable.
 
@@ -69,33 +69,19 @@ To create our web app that recognizes different handwritten digits, we need two 
 
 The above two routes are used implement our complete app.py
 
-![](images/10.png)
-![](images/11.png)
-![](images/12.png)
+![](images/10.PNG)
+![](images/11.PNG)
+![](images/12.PNG)
 
 
 Here we have the loader function, load.py:
 
-![](images/13.png)
+![](images/13.PNG)
 
 An interface which enables users to draw images from the browser is created. We'll use JavaScript and render a canvas on the HTML page. 
 
 At the end of this project, your directory structure should look like this:
 
-dbms-project/
-├── app.py
-├── Procfile
-├── requirements.txt
-├── runtime.txt
-├── model/
-│ ├── model.json
-│ ├── model.h5
-│ └── load.py
-├── templates/
-│ ├── index.html
-│ └── draw.html
-└── static/
-├── index.js
-└── style.css
+![](images/15.PNG)
 
 
